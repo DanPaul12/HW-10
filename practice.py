@@ -3,9 +3,9 @@ service_tickets = {
     "Ticket002": {"Customer": "Bob", "Issue": "Payment issue", "Status": "closed"}
 }
 
-def add_ticket(tickets, ticket, customer):
-    tickets.update({ticket:customer})
-    print(f"ticket {ticket} for {customer} has been registered")
+def add_ticket(tickets, ticket):
+    tickets[ticket] = {}
+    print(f"{ticket} has been registered")
 
 def update_status(tickets, ticket):
     tickets[ticket]["Status"] = "closed"
@@ -21,12 +21,11 @@ while True:
     choice = int(input("What would you like to do? \n1.Open a new service ticket. \n2.Update the status of an existing ticket. \n3.Display all tickets or filter by status. \nPlease select a number 1-3: "))
     if choice == 1:
         ticket = input("What is the ticket number?: ")
-        customer = input("What is the customer's name?")
-        add_ticket(service_tickets, ticket, customer)
+        add_ticket(service_tickets, ticket)
     elif choice == 2:
         ticketnum = input("What is the ticket number?")
         update_status(service_tickets, ticketnum)
     elif choice == 3:
         display_tickets(service_tickets)
     else:
-        pass
+        print("Please choose a number between 1-3.")

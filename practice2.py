@@ -5,24 +5,25 @@ restaurant_menu = {
 }
 
 def add_category(menu, category):
-    menu[category] = {}
-    print(f"{category} has been added to the menu!")
+        menu[category] = {}
+        print(f"{category} has been added to the menu!")
+        print(menu)
 
 def add_item(menu, category, item, price):
-    menu[category].update({item: price})
-    print(f"{item} has been added to the menu!")
+        menu[category].update({item: price})
+        print(f"{item} has been added to the menu!")
+        print(menu)
 
 def update_item(menu, category, item, price):
     menu[category][item] == price
     print(f"{item} is now {price}")
 
 def remove_item(menu, category, item):
-    menu[category].pop(item)
-    print(f"{item} has been removed from {category}")
+         menu[category].pop(item)
+         print(f"{item} has been removed from {category}")
 
 add_category(restaurant_menu, "Beverages")
 add_item(restaurant_menu, "Beverages", "Coke", 3.99)
 add_item(restaurant_menu, "Beverages", "Sprite", 3.99)
 update_item(restaurant_menu, "Main Course", "Steak", 17.99)
 remove_item(restaurant_menu, "Starters", "Bruschetta")
-print(restaurant_menu)
