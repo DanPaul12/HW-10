@@ -13,7 +13,7 @@ def add_item(menu, category, item, price):
     print(f"{item} has been added to the menu!")
 
 def update_item(menu, category, item, price):
-    menu[category][item] == price
+    menu[category][item] = price
     print(f"{item} is now {price}")
 
 def remove_item(menu, category, item):
